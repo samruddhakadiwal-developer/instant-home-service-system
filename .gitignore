@@ -21,4 +21,25 @@ env/
 
 # OS files
 .DS_Store
-Thumbs.db
+Thumbs.db# Large installers and executables
+*.exe
+
+# Cloudflared
+cloudflared.exe
+
+# Python installer
+python-3.12.3-amd64.exe
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment
+.env
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
