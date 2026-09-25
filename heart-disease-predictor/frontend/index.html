@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardioPredict | Professional Heart Disease Assessment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="CardioPredict Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Clinical Assessment</a></li>
+                <li><a href="#">Patient Records</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Assessment Steps</h3>
+            </div>
+            <div class="step-indicators">
+                <div class="step-indicator active">
+                    <span class="step-num">1</span>
+                    <span class="step-text">Personal Details</span>
+                </div>
+                <div class="step-indicator">
+                    <span class="step-num">2</span>
+                    <span class="step-text">Clinical Vitals</span>
+                </div>
+                <div class="step-indicator">
+                    <span class="step-num">3</span>
+                    <span class="step-text">Patient History</span>
+                </div>
+                <div class="step-indicator">
+                    <span class="step-num">4</span>
+                    <span class="step-text">Test Results</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Cardiovascular Risk Assessment</h2>
+                <p>Enter the patient's clinical metrics below to receive an AI-powered risk probability.</p>
+            </header>
+
+            <div class="card form-card">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <form id="prediction-form">
+                    <!-- Step 1: Personal -->
+                    <div class="form-step active" id="step-1">
+                        <h3>1. Personal Details</h3>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="Age">Age (Years)</label>
+                                <input type="number" id="Age" name="Age" required placeholder="e.g. 45" step="any">
+                            </div>
+                            <div class="input-group">
+                                <label for="Sex">Biological Sex</label>
+                                <select id="Sex" name="Sex" required>
+                                    <option value="" disabled selected>Select sex...</option>
+                                    <option value="0">Female</option>
+                                    <option value="1">Male</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="Weight">Weight (kg)</label>
+                                <input type="number" id="Weight" name="Weight" required placeholder="e.g. 70.5" step="any">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Vitals -->
+                    <div class="form-step" id="step-2">
+                        <h3>2. Clinical Vitals</h3>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="BP_systolic">Systolic BP (mmHg)</label>
+                                <input type="number" id="BP_systolic" name="BP_systolic" required placeholder="e.g. 120" step="any">
+                            </div>
+                            <div class="input-group">
+                                <label for="BP_diastolic">Diastolic BP (mmHg)</label>
+                                <input type="number" id="BP_diastolic" name="BP_diastolic" required placeholder="e.g. 80" step="any">
+                            </div>
+                            <div class="input-group">
+                                <label for="PR">Pulse Rate (bpm)</label>
+                                <input type="number" id="PR" name="PR" required placeholder="e.g. 72" step="any">
+                            </div>
+                            <div class="input-group">
+                                <label for="Spo2">SpO2 (%)</label>
+                                <input type="number" id="Spo2" name="Spo2" required placeholder="e.g. 98" step="any">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Clinical -->
+                    <div class="form-step" id="step-3">
+                        <h3>3. Patient History</h3>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="CP">Chest Pain Type</label>
+                                <select id="CP" name="CP" required>
+                                    <option value="" disabled selected>Select type...</option>
+                                    <option value="0">Typical Angina</option>
+                                    <option value="1">Atypical Angina</option>
+                                    <option value="2">Non-anginal Pain</option>
+                                    <option value="3">Asymptomatic</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="chol">Cholesterol</label>
+                                <select id="chol" name="chol" required>
+                                    <option value="" disabled selected>Select status...</option>
+                                    <option value="0">Normal</option>
+                                    <option value="1">High</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="Diabetics">Diabetic Status</label>
+                                <select id="Diabetics" name="Diabetics" required>
+                                    <option value="" disabled selected>Select status...</option>
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="HTN">Hypertension</label>
+                                <select id="HTN" name="HTN" required>
+                                    <option value="" disabled selected>Select status...</option>
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="Habits">Harmful Habits (Smoking, etc.)</label>
+                                <select id="Habits" name="Habits" required>
+                                    <option value="" disabled selected>Select status...</option>
+                                    <option value="0">None</option>
+                                    <option value="1">Present</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Tests -->
+                    <div class="form-step" id="step-4">
+                        <h3>4. Lab & Test Results</h3>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="ECG">Resting ECG</label>
+                                <select id="ECG" name="ECG" required>
+                                    <option value="" disabled selected>Select result...</option>
+                                    <option value="0">Normal</option>
+                                    <option value="1">ST-T Wave Abnormality</option>
+                                    <option value="2">Left Ventricular Hypertrophy</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="ECHO">ECHO Result</label>
+                                <input type="number" id="ECHO" name="ECHO" required placeholder="0, 1, or 2" min="0" max="2">
+                            </div>
+                            <div class="input-group">
+                                <label for="TMT">TMT Result</label>
+                                <input type="number" id="TMT" name="TMT" required placeholder="0, 1, or 2" min="0" max="2">
+                            </div>
+                            <div class="input-group">
+                                <label for="CAG">CAG Result (Number of Major Vessels)</label>
+                                <input type="number" id="CAG" name="CAG" required placeholder="0 to 4" min="0" max="4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wizard-controls">
+                        <button type="button" id="prev-btn" class="btn btn-outline" disabled>Back</button>
+                        <button type="button" id="next-btn" class="btn btn-primary">Continue</button>
+                        <button type="submit" id="submit-btn" class="btn btn-primary hidden">
+                            <span>Analyze Patient Data</span>
+                            <div class="loader" id="btn-loader"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card result-card hidden" id="result-card">
+                <div class="result-header">
+                    <h2>Clinical Assessment Report</h2>
+                    <button class="close-btn" id="close-btn">&times;</button>
+                </div>
+                
+                <div class="result-body">
+                    <div class="score-container">
+                        <div class="score-circle">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg"
+                                  d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <path class="circle" id="score-circle"
+                                  stroke-dasharray="0, 100"
+                                  d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <text x="18" y="20.35" class="percentage" id="score-text">0%</text>
+                            </svg>
+                        </div>
+                        <div class="score-details">
+                            <h3 id="result-title">Processing...</h3>
+                            <p id="result-desc">Awaiting AI analysis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="factors-section" id="factors-section">
+                        <h4>Top Influencing Clinical Factors</h4>
+                        <p class="factors-subtitle">Derived via Local SHAP Interpretation</p>
+                        <ul id="factors-list">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+name: NV_9999
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - opencv
+  - matplotlib
+  - numpy
+  - sympy
+  - python=3.10.*
+  - coppeliasim-zmqremoteapi-client
+  - pip:
+    - cbor
+    - cryptocode
+    - pyzmq
