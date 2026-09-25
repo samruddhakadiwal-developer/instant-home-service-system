@@ -43,3 +43,5 @@ venv/
 *.db
 *.sqlite
 *.sqlite3
+
+*.exe
